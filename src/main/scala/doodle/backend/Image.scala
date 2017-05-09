@@ -59,11 +59,15 @@ final case class Beside(left: Image, right: Image) extends Image
 final case class Above(above: Image, below: Image) extends Image
 
 final case class BoundingBox(left: Double, top: Double, right: Double, bottom: Double) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> f0f3f3b7e34e4148f880ff3ee99c13e0b35c120e
   val height = top - bottom
   val width = right - left
 
   def above(that: BoundingBox): BoundingBox = BoundingBox(this.left min that.left,
+<<<<<<< HEAD
     (this.height+that.height)/2,this.right max that.right,-(this.height + that.height)/2)
 
   def beside(that: BoundingBox): BoundingBox =
@@ -71,6 +75,9 @@ final case class BoundingBox(left: Double, top: Double, right: Double, bottom: D
 
   def on(that: BoundingBox): BoundingBox =
     BoundingBox(this.left min that.left, this.top max that.top, this.right max that.right, this.bottom min that.bottom)
+=======
+    this.height,this.left,this.left)
+>>>>>>> f0f3f3b7e34e4148f880ff3ee99c13e0b35c120e
 }
 
 
